@@ -33,7 +33,7 @@
                     $login = $_POST['login'];
                     // Убираем лишние пробелы и делаем хэширование методом crypt
                     $password = crypt($_POST['password'], 'UlTrAGyPeRsEcReT'); 
-                    mysqli_query($link,"INSERT INTO users SET user_log='".$login."', user_pas='".$password."', role='guest'");
+                    mysqli_query($link,"INSERT INTO users SET user_log='".$login."', user_pas='".$password."', user_role='guest'");
 
                     //переадресовываем на страницу с сообщением об успехе
                     header("Location: ?url=authorized");

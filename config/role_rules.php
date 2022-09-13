@@ -1,7 +1,7 @@
 <?php
     //присвоение прав пользователей
     session_start();
-    switch ($_SESSION['role']) {
+    switch ($_SESSION['user_role']) {
         case 'Administrator':
             $canView = true;
             $canEdit = true;
