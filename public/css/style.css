@@ -248,7 +248,7 @@ input[name=sendMsg]:hover {
 
 /*bootstrap*/
 
-.navbar{
+/*.navbar{
     background:#F97300;
    }
 .nav-link , .navbar-brand{
@@ -274,11 +274,13 @@ input[name=sendMsg]:hover {
 .bg-primary{
     background-color:#343a40!important
     }
+*/
 
 /*header style*/
 
+/*
 .header{
-    background-image: url('../img/headerback.jpg');
+    background-image: url('img/headerback.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -291,3 +293,4 @@ input[name=sendMsg]:hover {
     top: 0;
     background: rgba(244, 244, 244, 0.79);
    }
+*/

@@ -1,8 +1,8 @@
 <?php
     $db_host = 'localhost';
-    $db_log = 'root';
-    $db_pas = '';
-    $db_name = '32_practice';
+    $db_log = 'homestead';
+    $db_pas = 'secret';
+    $db_name = 'SF_AdTech';
 
     $link = mysqli_connect($db_host, $db_log, $db_pas);
 
