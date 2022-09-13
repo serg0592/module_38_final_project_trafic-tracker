@@ -1,8 +1,8 @@
 <?php
     //присвоение прав пользователей
     session_start();
-    switch ($_SESSION['user_role']) {
-        case 'Administrator':
+    switch ($_SESSION['role']) {
+        case 'administrator':
             $canView = true;
             $canEdit = true;
             $canDelete = true;
@@ -10,7 +10,7 @@
             $canSeeText = true;
             $canSeePic = true;
             break;
-        case 'User':
+        case 'user':
             $canView = true;
             $canEdit = true;
             $canDelete = false;

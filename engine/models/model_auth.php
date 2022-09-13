@@ -42,7 +42,7 @@
                     // Записываем в БД новый хеш авторизации
                     mysqli_query(
                         $link, "UPDATE users 
-                        SET user_authHash='".$authHash."' WHERE id='".$data['id']."'"
+                        SET auth_hash='".$authHash."' WHERE id='".$data['id']."'"
                     );
 
                     //проверка чек-бокса "запомнить меня"
@@ -54,7 +54,7 @@
                         );
                         //хэш авторизации
                         setcookie(
-                            "authHash", $authHash, time()+60*60*24, "/", "localhost", false, true
+                            "auth_hash", $authHash, time()+60*60*24, "/", "localhost", false, true
                         ); // httponly!
                     } else {
                         //если нет "запомнить", записываем хэш в сессию

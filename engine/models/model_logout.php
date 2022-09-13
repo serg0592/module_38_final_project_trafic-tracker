@@ -7,24 +7,24 @@
             include '../config/db_connect.php';
 
             //проверяем наличие куки (хэш, id)
-            if (isset($_COOKIE['authHash']) && isset($_COOKIE['id'])) {
+            if (isset($_COOKIE['auth_hash']) && isset($_COOKIE['id'])) {
                 //удаляем хэш авторизации из БД
 
                 mysqli_query(
                     $link, "UPDATE users 
-                    SET user_authHash='".null."' WHERE id='".intval($_COOKIE['id'])."'"
+                    SET auth_hash='".null."' WHERE id='".intval($_COOKIE['id'])."'"
                 );
 
                 // Удаляем куки
                 setcookie("id", "", time() - 1, '/');
-                setcookie("authHash", "", time() - 1, '/'); // httponly !!!
+                setcookie("auth_hash", "", time() - 1, '/'); // httponly !!!
 
             //если нет куки, проверяем хэш в сессии (пользователь "не запоминал" себя)
             } elseif (isset($_SESSION['authHash'])) {
                 //удаляем хэш авторизации из БД
                 mysqli_query(
                     $link, "UPDATE users 
-                    SET user_authHash='".null."' WHERE id='".intval($_SESSION['id'])."'"
+                    SET auth_hash='".null."' WHERE id='".intval($_SESSION['id'])."'"
                 );
                 //очищаем $_SESSION
                 $_SESSION['id'] = null;
