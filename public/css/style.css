@@ -1,3 +1,4 @@
+/*
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -243,12 +244,12 @@ input[name=sendMsg]:hover {
     color:#3F51B5;
     background-color:#fff;
 }
-
+*/
 
 /*bootstrap*/
 
-/*.navbar{
-    background:#F97300;
+.navbar{
+    background: #F97300;
    }
 .nav-link , .navbar-brand{
     color: #f4f4f4;
@@ -273,15 +274,12 @@ input[name=sendMsg]:hover {
 .bg-primary{
     background-color:#343a40!important
     }
-*/
-
-/*header style*/
-
-/*
 .header{
-    background-image: url('img/headerback.jpg');
+    height: 35.5rem;
+    background-image: url('../img/headerback.jpg');
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
    }
 .overlay{
@@ -292,4 +290,23 @@ input[name=sendMsg]:hover {
     top: 0;
     background: rgba(244, 244, 244, 0.79);
    }
-*/
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+    color:#F97300 ;
+}
+.description p{
+    color:#fff;
+    font-size: 20px;
+    width: 50%;
+    line-height: 1.5;
+}
+.description button{
+    border:1px  solid #F97300;
+    background:#F97300;
+    color:#fff;
+}
