@@ -275,11 +275,11 @@ input[name=sendMsg]:hover {
     background-color:#343a40!important
     }
 .header{
-    height: 35.5rem;
+    display: block;
     background-image: url('../img/headerback.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
    }
 .overlay{
