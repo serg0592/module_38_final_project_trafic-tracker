@@ -262,10 +262,22 @@ input[name=sendMsg]:hover {
 }
 
 /*bootstrap*/
+.custom-btn {
+    background: var(--secondary-color-1) !important;
+    color: var(--secondary-color-3) !important;
+}
+.custom-btn:hover {
+    background: var(--secondary-color-3) !important;
+    color: var(--secondary-color-1) !important;
+    transition: all 0.2s ease-in-out;
+}
 /*navigation*/
 
 .navbar{
     background: var(--main-color-2);
+    border: 1px solid var(--main-color-2);
+    border-bottom-left-radius: 0.7rem;
+    border-bottom-right-radius: 0.7rem;
    }
 .nav-link, .navbar-brand, .auth, .reg{
     color: var(--main-color-1) !important;
@@ -275,11 +287,11 @@ input[name=sendMsg]:hover {
    }
 .navbar-brand {
     margin-left: 1rem !important;
+    margin-bottom: 0.3rem !important;
     padding: 1rem;
    }
 .nav-link{
-    margin-right: 1rem !important;
-    margin-top: 0.5rem;
+    margin-left: 1rem !important;
    }
 .navbar-brand:hover {
     border: 0.1rem solid var(--main-color-1);
@@ -298,11 +310,27 @@ input[name=sendMsg]:hover {
     color: var(--secondary-color-1) !important;
     border: 0.1rem solid var(--secondary-color-3);
 }
-.navbar-collapse{
+.navbar-collapse{    
     justify-content: flex-end;
    }
+.show .nav-link, .collapsing .nav-link {
+    margin-top: 0.1rem;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+}
 .navbar-toggler{
-     background: var(--third-color-2) !important;
+    padding: 0.1rem 0.5rem !important;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.5rem;
+    background: var(--secondary-color-1) !important;
+}
+.navbar-toggler:focus{
+    box-shadow: 0 0 0 0.05rem !important;
+    background: var(--secondary-color-1) !important;
+}
+.navbar-nav {
+    list-style-position: inherit;
 }
 .bg-dark{
     background-color: var(--main-color-3)!important
