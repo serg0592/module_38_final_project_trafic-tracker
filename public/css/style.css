@@ -10,6 +10,10 @@
     --third-color-3: #a61300;
 }
 
+.body {
+    box-sizing: border-box;
+}
+
 @font-face {
     font-family: 'Roboto';
     font-style: normal;
@@ -275,6 +279,7 @@ input[name=sendMsg]:hover {
    }
 .nav-link{
     margin-right: 1rem !important;
+    margin-top: 0.5rem;
    }
 .navbar-brand:hover {
     border: 0.1rem solid var(--main-color-1);
@@ -297,8 +302,8 @@ input[name=sendMsg]:hover {
     justify-content: flex-end;
    }
 .navbar-toggler{
-     background: var(--third-color-1) !important;
-   }
+     background: var(--third-color-2) !important;
+}
 .bg-dark{
     background-color: var(--main-color-3)!important
     }
