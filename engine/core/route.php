@@ -38,10 +38,12 @@ class Route
 					$controller_name = 'logout';
 					$action_name = 'logout';
 					break;
+				/*
 				case 'authSuccess':
 					$controller_name = 'main';
 					$action_name = 'authSuccess';
 					break;
+				*/
 				case 'request_oauth':
 					$controller_name = 'request_oauth';
 					$action_name = 'request_oauth';

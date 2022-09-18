@@ -24,40 +24,21 @@
                     <ul class="navbar-nav mr-4">
                         <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact-form">Контакт</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link auth" href="" data-bs-toggle="dropdown" aria-expanded="false">Войти</a>
-                            <ul class="dropdown-menu" wfd-invisible="true">
-                                <li>здесь будет форма входа</li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link reg" href="" data-bs-toggle="dropdown" aria-expanded="false">Регистрация</a>
-                            <ul class="dropdown-menu" wfd-invisible="true">
-                                <li>здесь будет форма регистрации</li>
-                            </ul>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#content">Content</a></li>
+                        <!-- проверим наличие авторизованного пользователя -->
+                        <?php
+                            //если есть авторизованный пользователь, то подгружаем меню для него,
+                            //иначе форму авторизации и регистрации
+                            if (isset($authUserData_view)) {
+                                include $authUserData_view;
+                            } else {
+                                include '../engine/views/auth_form_dropdown_view.php';
+                                include '../engine/views/registration_form_dropdown_view.php';
+                            };
+                        ?>
                     </ul>
                 </div>
             </div>
-        </nav>
-        <!--<nav class="navbar fixed-top ">
-            <a class="navbar-brand" href="#">На главную</a>
-            <nav class="navbar-expand-lg fixed-top ">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu-collapse" aria-expanded="false" aria-controls="nav-menu-collapse">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" fill="#3F51B5" class="bi bi-card-list" viewBox="0 0 16 16">
-                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-                    </svg>
-                </button>
-                <div class="collapse navbar-collapse" id="nav-menu-collapse">
-                    <ul class="navbar-nav mr-4">            
-                        <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact-form">Контакт</a></li>
-                        <li class="nav-item"><a class="nav-link auth" href="#authorization">Войти</a></li>
-                        <li class="nav-item"><a class="nav-link reg" href="#registration">Регистрация</a></li>
-                    </ul>
-                </div>
-            </nav>-->
         </nav>
         <header class="header">
             <div class="overlay fixed">
@@ -95,6 +76,22 @@
                 </div>
             </div>
 
+            <!-- digital content area -->
+
+            <a name="content"></a>
+            <div class="container">
+                <div class="about text-left">
+                    <h3><font color="#f97300">Digital content:</font></h3>
+                    <br>
+                    <?php
+                        //подгружаем содержимое страницы
+                        if ($content_view !== 'main_view.php') {
+                            include $content_view;
+                        }
+                    ?>
+                </div>
+            </div>
+
             <!-- Contact form -->
 
             <div class="contact-form">
@@ -121,28 +118,6 @@
                     </form>
                 </div>
             </div>
-
-            <!-- authorization -->
-
-            <div class="auth_shell">
-            <?php
-                    //если есть авторизованный пользователь, то подгружаем страницу для него,
-                    //иначе главную страницу
-                    if (isset($authUserData_view)) {
-                        include $authUserData_view;
-                    } elseif ($content_view == 'main_view.php') {
-                        include $content_view;
-                    }
-                ?>
-            </div>
-
-            <!-- digital content area -->
-            <?php
-                //подгружаем содержимое страницы
-                if ($content_view !== 'main_view.php') {
-                    include $content_view;
-                }
-            ?>
 
             <!-- message area -->
             
