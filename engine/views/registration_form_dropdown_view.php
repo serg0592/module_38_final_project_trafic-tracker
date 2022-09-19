@@ -2,11 +2,19 @@
 
 <li class="nav-item dropdown">
     <a class="nav-link reg" href="" data-bs-toggle="dropdown" aria-expanded="false">Регистрация</a>
-    <ul class="dropdown-menu" wfd-invisible="true">
+    <ul class="dropdown-menu registration" wfd-invisible="true">
         <li>
             <form method="POST" action="">
-                Логин <input name="login" type="text" required><br>
-                Пароль <input name="password" type="password" required><br>
+                <div class="reg_form_text">
+                    <div class="log_text">Логин</div>
+                    <div class="pas_text">Пароль</div>
+                </div>
+                <div class="reg_form_fields">
+                    <input name="login" type="text" required> <br>
+                    <input name="password" type="password" required> <br>
+                </div> <br>
+                <?php include '../config/token.php'; ?>
+                <input type="hidden" name="token" value="<?php echo $token; ?>">
                 <input name="registration" type="submit" value="Зарегистрироваться">
             </form>
         </li>

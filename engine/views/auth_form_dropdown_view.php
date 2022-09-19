@@ -1,8 +1,9 @@
+
 <!-- authorization form dropdown -->
 
 <li class="nav-item dropdown">
     <a class="nav-link auth" href="" data-bs-toggle="dropdown" aria-expanded="false">Войти</a>
-    <ul class="dropdown-menu" wfd-invisible="true">
+    <ul class="dropdown-menu authorization" wfd-invisible="true">
         <li>
             <form class="auth_form" method="POST" action="">
                 <div class="auth_form_text">
