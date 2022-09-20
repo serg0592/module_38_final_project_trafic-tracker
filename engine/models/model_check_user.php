@@ -1,5 +1,5 @@
 <?php
-    class Model_Check extends Model {
+    class Model_Check_user extends Model {
         // Скрипт проверки 
         function checkUser() {
             include_once '../config/logger.php';
@@ -19,9 +19,9 @@
                     $log->error('Не соответствует хэш авторизации / id пользователя (куки)');
                     exit();
                 } else {
-                    $_SESSION['message'] = "Привет, ".$userdata['user_log']."!(куки)";
+                    $_SESSION['message'] = "Привет, ".$userdata['user_log']."! (куки)";
                     $_SESSION['role'] = $userdata['user_role'];
-                    header("Location: ?url=authSuccess");
+                    header("Location: ?url=authorized");
                     exit();
                 };
 
@@ -40,19 +40,11 @@
                     $log->error('Не соответствует хэш авторизации / логин пользователя (сессия)');
                     exit();
                 } else {
-                    $_SESSION['message'] = "Привет, ".$userdata['user_log']."!(сессия)";
+                    $_SESSION['message'] = "Привет, ".$userdata['user_log']."! (сессия)";
                     $_SESSION['role'] = $userdata['user_role'];
                     header("Location: ?url=authorized");
                     exit();
                 };
-
-            //если в сессии нет хэша авторизации и логина, то проверяем наличие VK-токена
-            } elseif (isset($_SESSION['VKoauthToken'])) {
-                $_SESSION['message'] = "Привет, ".$_SESSION['first_name']." ".$_SESSION['last_name']." !(VK OAuth)";
-                $_SESSION['role'] = 'VK';
-                header("Location: ?url=authorized");
-                exit();
-                
             } else {
                 $log->error('Нет авторизованных пользователей');
                 header("Location: ?url=main");

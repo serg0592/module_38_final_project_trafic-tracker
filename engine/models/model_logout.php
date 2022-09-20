@@ -35,22 +35,10 @@
                 setcookie("PHPSESSID", '', time() - 3600, '/');
 
                 session_destroy();
-
-            //если нет хэша в сессии, проверяем токен VK OAuth (пользователь авторизовался через VK)
-            } elseif ($_SESSION['VKoauthToken']) {
-                //очищаем $_SESSION
-                $_SESSION['VKoauthToken'] = null;
-                $_SESSION['userData'] = null;
-                $_SESSION['first_name'] = null;
-                $_SESSION['last_name'] = null;
-                //удаляем куки сессии
-                setcookie("PHPSESSID", '', time() - 3600, '/');
-
-                session_destroy();
             };
             
             //Переходим на главную страницу
-            header("Location: ?url=main");
+            header("Location: ?url=check_user");
             exit();
         }
     }

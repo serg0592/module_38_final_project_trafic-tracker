@@ -7,7 +7,7 @@ class View {
 	}
 
 	//генерации страницы с авторизованным пользователем
-	function generateAuth($content_view, $template_view, $authUserData_view, ) {
+	function generateAuth($content_view, $template_view, $authUserMenu_view, ) {
 		include '../engine/views/'.$template_view;
 	}
 }

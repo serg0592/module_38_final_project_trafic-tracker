@@ -1,5 +1,5 @@
 <?php
-    class Model_Auth extends Model {
+    class Model_Authorization extends Model {
         //генерация случайной строки (для хэша авторизации)
         public function generateCode($length) {
             $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRQSTUVWXYZ0123456789";
@@ -12,7 +12,7 @@
         }
         
         //авторизация пользователя
-        public function userAuth() {
+        public function userAuthorization() {
             include_once '../config/logger.php'; //логгер
 
             session_start();
@@ -62,7 +62,7 @@
                     };
 
                     // Переадресовываем браузер на страницу проверки нашего скрипта
-                    header("Location: ?url=check");
+                    header("Location: ?url=check_user");
 
                 } else {
                     $log->error('Неверный пароль');

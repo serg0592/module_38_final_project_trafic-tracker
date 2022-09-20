@@ -159,6 +159,7 @@ input[type=submit]:hover {
     border-radius: 0.5rem;
    }
 .navbar-brand {
+    font-weight: 1000;
     margin-left: 1rem !important;
     margin-bottom: 0.3rem !important;
     padding: 1rem;
@@ -310,4 +311,27 @@ input[type=submit]:hover {
     background: var(--third-color-3) !important;
     color: var(--third-color-1) !important;
     transition: all 0.2s ease-in-out;
+}
+
+/*registration success modal*/
+
+.modal-body {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 0;
+    height: 0;
+    z-index: 1000;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+.modal-body.open {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+    visibility: visible !important;
+    opacity: 1 !important;
 }

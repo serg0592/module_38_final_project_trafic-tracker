@@ -9,130 +9,52 @@
         <title>SF_AdTech</title>
     </head>
     <body class="body">
-        <!-- navigation -->
-        <nav class="navbar navbar-expand-md fixed-top" aria-label="navigation-expand">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">SF-AdTech</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu-collapse" aria-controls="nav-menu-collapse" aria-expanded="false" aria-label="Toggle navigation" wfd-invisible="true">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="#a67300" class="bi bi-card-list" viewBox="0 0 16 16">
-                        <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
-                        <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
-                    </svg>
-                </button>
-                <div class="collapse navbar-collapse" id="nav-menu-collapse">
-                    <!--<ul class="navbar-nav me-auto mb-2 mb-md-0">-->
-                    <ul class="navbar-nav mr-4">
-                        <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact-form">Контакт</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#content">Content</a></li>
-                        <!-- проверим наличие авторизованного пользователя -->
-                        <?php
-                            //если есть авторизованный пользователь, то подгружаем меню для него,
-                            //иначе форму авторизации и регистрации
-                            if (isset($authUserData_view)) {
-                                include $authUserData_view;
-                            } else {
-                                include '../engine/views/auth_form_dropdown_view.php';
-                                include '../engine/views/registration_form_dropdown_view.php';
-                            };
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         <header class="header">
-            <div class="overlay fixed">
 
-                <!-- greating -->
-
-                <div class="container">
-                    <div class="greating text-left">
-                        <h3>
-                            <font color="#f97300">
-                                Привет, добро пожаловать на мой финальный проект!
-                                <p><br>
-                                    надеюсь, вы оцените данное приложение, ведь я делал так,
-                                    чтобы всё выглядело хорошо и функционировало правильно :-)
-                                </p>
-                                <a href="#about"><button class="btn btn-outline-secondary">Далее</button></a>
-                            </font>
-                        </h3>
+            <!-- navigation -->
+            
+            <nav class="navbar navbar-expand-md fixed-top" aria-label="navigation-expand">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">SF-AdTech</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-menu-collapse" aria-controls="nav-menu-collapse" aria-expanded="false" aria-label="Toggle navigation" wfd-invisible="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2.5rem" height="2.5rem" fill="#a67300" class="bi bi-card-list" viewBox="0 0 16 16">
+                            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+                            <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+                        </svg>
+                    </button>
+                    <div class="collapse navbar-collapse" id="nav-menu-collapse">
+                        <ul class="navbar-nav mr-4">
+                            <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact-form">Контакт</a></li>
+                            <!-- проверим наличие авторизованного пользователя -->
+                            <?php
+                                //если есть авторизованный пользователь, то подгружаем меню для него,
+                                //иначе форму авторизации и регистрации
+                                if (isset($authUserMenu_view)) {
+                                    include $authUserMenu_view;
+                                } else {
+                                    include '../engine/views/authorization_form_dropdown_view.php';
+                                    include '../engine/views/registration_form_dropdown_view.php';
+                                };
+                            ?>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
-        <main class="main">
 
-            <!-- about -->
+        <!-- digital content area -->
 
-            <a name="about"></a>
-            <div class="container">
-                <div class="about text-left">
-                    <h3><font color="#f97300">Итак, было сделано:</font></h3>
-                    <br>
-                    <p>
-                        "здесь описание выполненых требований"
-                    </p>
-                </div>
-            </div>
-
-            <!-- digital content area -->
-
-            <a name="content"></a>
-            <div class="container">
-                <div class="about text-left">
-                    <h3><font color="#f97300">Digital content:</font></h3>
-                    <br>
-                    <?php
-                        //подгружаем содержимое страницы
-                        if ($content_view !== 'main_view.php') {
-                            include $content_view;
-                        }
-                    ?>
-                </div>
-            </div>
-
-            <!-- Contact form -->
-
-            <div class="contact-form">
-                <a name="contact-form"></a>
-                <div class="container">
-                    <form>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-4 col-sm-12">
-                                <h1><font color="#f97300">Напишите мне!</font></h1> 
-                            </div>
-                            <div class="col-lg-8 col-md-8 col-sm-12 right">
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
-                                </div>
-                                <div class="form-group">
-                                    <textarea class="form-control form-control-lg"></textarea>
-                                </div>
-                                <input type="submit" class="btn btn-secondary btn-block custom-btn" value="Send" name="">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- message area -->
-            
-            <!--<div class="msgarea">
-                <form method="post" action="">
-                    <textarea name="msgText" rows="10" cols="50"></textarea>
-                    <input type="submit" name="sendMsg" value="Отправить сообщение">
-                </form>
-            </div>-->
-        </main>
+        <?php
+            //подгружаем контент для пользователя
+            include $content_view;
+        ?>
         <footer>
+
         </footer>
         <!-- JQuery -->
-        <!-- Bootstrap Bundle Popper -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+        <!-- Bootstrap Bundle Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <!-- JS -->
         <script type="text/javascript" src='js/script.js'></script>

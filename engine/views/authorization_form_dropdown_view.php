@@ -20,7 +20,7 @@
                 </div> <br>
                 <?php include '../config/token.php'; ?>
                 <input type="hidden" name="token" value="<?php echo $token; ?>">
-                <input name="submitAuth" type="submit" value="Авторизоваться">
+                <input name="authorization" type="submit" value="Авторизоваться">
             </form>
         </li>
     </ul>

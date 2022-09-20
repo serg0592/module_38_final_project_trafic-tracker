@@ -26,14 +26,6 @@
             $canSeeText = true;
             $canSeePic = false;
             break;
-        case 'VK':
-            $canView = true;
-            $canEdit = false;
-            $canDelete = false;
-            $canPush = true;
-            $canSeeText = true;
-            $canSeePic = true;
-            break;
     };
 
     //реализация прав пользователей

@@ -4,8 +4,8 @@ class Route
 	public static function start()
 	{
 		//действия по умолчанию
-		$controller_name = 'check';
-		$action_name = 'check';
+		$controller_name = 'check_user';
+		$action_name = 'check_user';
 
         //проверка наличия имя контроллера в GET
 		if (isset($_GET['url'])) {
@@ -22,65 +22,35 @@ class Route
 					$controller_name = 'registration';
 					$action_name = 'reg_success';
 					break;
-				case 'check':
-					$controller_name = 'check';
-					$action_name = 'check';
+				case 'check_user':
+					$controller_name = 'check_user';
+					$action_name = 'check_user';
 					break;
 				case 'error':
 					$controller_name = 'error';
 					$action_name = 'error';
 					break;
 				case 'authorized':
-					$controller_name = 'main';
+					$controller_name = 'authorized';
 					$action_name = 'authorized';
 					break;
 				case 'logout':
 					$controller_name = 'logout';
 					$action_name = 'logout';
 					break;
-				/*
-				case 'authSuccess':
-					$controller_name = 'main';
-					$action_name = 'authSuccess';
-					break;
-				*/
-				case 'request_oauth':
-					$controller_name = 'request_oauth';
-					$action_name = 'request_oauth';
-					break;
-				case 'getVKUserdata':
-					$controller_name = 'get_VK_userdata';
-					$action_name = 'get_VK_userdata';
-					break;
-				case 'secretPage':
-					$controller_name = 'secret_page';
-					$action_name = 'open';
-					break;
 			};
 		};
 
-		//проверка данных формы из index.html (переход к VK OAuth или на страницу авторизации этого приложения)
-		if(isset($_GET['sendOAuthCode']) && (!$_GET['code'] == '')) {
-				$controller_name = 'response_oauth';
-				$action_name = 'response_oauth';
-		};
-
 		//нажата кнопка "Авторизоваться"
-		if (isset($_POST['submitAuth'])) {
-			$controller_name = 'auth';
-			$action_name = 'auth';
+		if (isset($_POST['authorization'])) {
+			$controller_name = 'authorization';
+			$action_name = 'authorization';
 		};
 		
 		//нажата кнопка "Зарегистрироваться" на странице регистрации
 		if (isset($_POST['registration'])) {
 			$controller_name = 'registration';
 			$action_name = 'registration';
-		};
-		
-		//отправлено сообщение
-		if (isset($_POST['sendMsg'])) {
-			$controller_name = 'msg';
-			$action_name = 'saveMsg';
 		};
 
 		// добавляем префиксы

@@ -12,7 +12,8 @@
             <?php    
                 session_start();
                 $greating = $_SESSION['message'];
-                echo $greating;
+                echo $greating . "<br>";
+                echo $_SESSION['role'];
             ?>
         </li>
         <li class="nav-item"><a class="nav-link" href='#'>Профиль</a></li>
