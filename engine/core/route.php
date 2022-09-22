@@ -26,7 +26,7 @@ class Route
 					$controller_name = 'error';
 					$action_name = 'error';
 					break;
-				case 'authorized':
+				case 'authorized':					
 					$controller_name = 'authorized';
 					$action_name = 'authorized';
 					break;

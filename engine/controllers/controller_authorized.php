@@ -6,7 +6,27 @@
         }
 
         function action_authorized() {
-            $this->view->generateAuth('authorizedContent_view.php', 'template_view.php', 'authorizedUserMenuDD_view.php');
+            session_start();
+            switch($_SESSION['role']) {
+                case 'administrator':
+                    $navigation = 'adminNav_view.php';
+                    $content = 'adminContent_view.php';
+                break;
+                case 'offerMaker':
+                    $navigation = 'offerMakerNav_view.php';
+                    $content = 'offerMakerContent_view.php';
+                break;
+                case 'webMaster':
+                    $navigation = 'webMasterNav_view.php';
+                    $content = 'webMasterContent_view.php';
+                break;
+                case 'guest':
+                    $navigation = 'mainNav_view.php';
+                    $content = 'main_view.php';
+                break;
+            };
+            $this->view->generateAuth($content, 'template_view.php', 
+                                        'authorizedUserMenuDD_view.php', $navigation);
         }
     }
 ?>

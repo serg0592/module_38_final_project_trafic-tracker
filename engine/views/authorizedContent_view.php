@@ -1,8 +1,4 @@
-<?php
-        include_once '../config/role_rules.php';
-?>
-
-<div class="overlay fixed">
+<!--<div class="overlay fixed">
     <div class="container">
         <div class="greating text-left">
             <div class="custom-btn">
@@ -24,4 +20,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

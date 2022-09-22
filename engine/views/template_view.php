@@ -24,18 +24,15 @@
                     </button>
                     <div class="collapse navbar-collapse" id="nav-menu-collapse">
                         <ul class="navbar-nav mr-4">
-                            <li class="nav-item"><a class="nav-link" href="#about">О проекте</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact-form">Контакт</a></li>
-                            <!-- проверим наличие авторизованного пользователя -->
                             <?php
-                                //если есть авторизованный пользователь, то подгружаем меню для него,
-                                //иначе форму авторизации и регистрации
+                                //если есть авторизованный пользователь,
+                                //то подгружаем меню профиля и навигационное меню для него
                                 if (isset($authUserMenu_view)) {
+                                    include $authNav_view;
                                     include $authUserMenu_view;
                                 } else {
-                                    include '../engine/views/authorizationFormDD_view.php';
-                                    include '../engine/views/registrationFormDD_view.php';
-                                };
+                                    include '../engine/views/mainNav_view.php';
+                                }
                             ?>
                         </ul>
                     </div>
@@ -49,8 +46,37 @@
             //подгружаем контент для пользователя
             include $content_view;
         ?>
+        
         <footer>
+            <!-- Contact form -->
 
+            <div class="contact-form">
+                <a name="contact-form"></a>
+                <div class="container">
+                    <form>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                <h1><font color="#f97300">Напишите мне!</font></h1> 
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-12 right">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-lg" placeholder="Your Name" name="">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <textarea class="form-control form-control-lg"></textarea>
+                                </div>
+                                <br>
+                                <input type="submit" class="btn btn-secondary btn-block custom-btn" value="Send" name="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </footer>
         <!-- JQuery -->
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>

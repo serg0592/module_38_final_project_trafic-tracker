@@ -9,8 +9,7 @@
     </a>
     <ul class="dropdown-menu user-menu" wfd-invisible="true">
         <li class="nav-item">
-            <?php    
-                session_start();
+            <?php
                 $greating = $_SESSION['message'];
                 echo $greating . "<br>";
                 echo $_SESSION['role'];
