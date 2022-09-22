@@ -1,8 +1,16 @@
-//задать размеры overlay
-document.querySelector('.header').setAttribute(`style`, `width:${window.innerWidth}px`);
-document.querySelector('.header').setAttribute(`style`, `height:${window.innerHeight}px`);
+//debugger;
 
-debugger;
+//задать размеры header
+document.querySelector('.header').style.width = `${window.innerWidth}px`;
+document.querySelector('.header').style.height = `${window.innerHeight}px`;
+
+if (document.querySelector('#admin')) {
+    document.querySelector('.header').style.backgroundImage = "URL('../img/adminback.jpg')";
+} else if (document.querySelector('#offerMaker')) {
+    document.querySelector('.header').setAttribute(`style`, `height: 0px`);
+} else if (document.querySelector('#webMaster')) {
+    document.querySelector('.header').setAttribute(`style`, `height: 0px`);
+};
 
 //сравнение полей с паролем при регистрации
 const password = document.forms['reg-form'].elements['password'];

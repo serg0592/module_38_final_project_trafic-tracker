@@ -276,7 +276,34 @@ input[type=submit]:hover {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    height: auto;
+    width: auto;
    }
+header.header.admin {
+    display: block;
+    background-image: url('../img/adminback.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+header.header.offermaker {
+    display: block;
+    background-image: url('../img/offermakerback.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+header.header.webmaster {
+    display: block;
+    background-image: url('../img/webmasterback.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 .overlay{
     position: absolute;
     min-height: 100%;
@@ -288,11 +315,11 @@ input[type=submit]:hover {
 
 /*greating, about*/
 
-.about{
+.about, .offerMaker{
     margin: auto;
     padding: 6em 2em 2em 2em;
 }
-.greating{
+.greating, .auth-wait{
     position: absolute;
     top: 30%;
     margin: auto;
@@ -381,3 +408,5 @@ h2.fw-bold#text-success {
     text-decoration: none;
     color: var(--main-color-1);
 }
+
+/*admin content*/
