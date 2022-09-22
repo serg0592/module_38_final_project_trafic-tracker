@@ -5,13 +5,15 @@
     <ul class="dropdown-menu registration" wfd-invisible="true">
         <li>
             <form name="reg-form" method="POST" action="">
-                <div class="reg_form_text">
+                <div class="reg-form-text">
                     <div class="log_text">Логин</div>
                     <div class="pas_text">Пароль</div>
+                    <div class="pas_text">Ещё раз</div>
                 </div>
-                <div class="reg_form_fields">
-                    <input name="login" type="text" required> <br>
-                    <input name="password" type="password" required> <br>
+                <div class="reg-form-fields">
+                    <input name="login" type="text" placeholder="Придумайте логин" required> <br>
+                    <input class="" name="password" type="password" placeholder="Придумайте пароль" required> <br>
+                    <input class="" name="passwordDouble" type="password" placeholder="Введите пароль ещё раз" required> <br>
                 </div> <br>
                 <?php include '../config/token.php'; ?>
                 <input type="hidden" name="token" value="<?php echo $token; ?>">

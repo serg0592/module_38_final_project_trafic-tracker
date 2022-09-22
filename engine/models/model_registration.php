@@ -34,6 +34,8 @@
                     // Убираем лишние пробелы и делаем хэширование методом crypt
                     $password = crypt($_POST['password'], 'UlTrAGyPeRsEcReT'); 
                     mysqli_query($link,"INSERT INTO users SET user_log='".$login."', user_pas='".$password."', user_role='guest'");
+                    header ('Location: ?url=regSuccess');
+                    exit();
                 } else {
                     header ('Location: ?url=error');
                     exit();

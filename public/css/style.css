@@ -29,6 +29,48 @@
     src: url('../fonts/Roboto/Roboto-Medium.ttf');
 }
 
+/*bootstrap*/
+
+.custom-btn {
+    background: var(--secondary-color-1) !important;
+    color: var(--secondary-color-3) !important;
+}
+.custom-btn:hover {
+    background: var(--secondary-color-3) !important;
+    color: var(--secondary-color-1) !important;
+    transition: all 0.2s ease-in-out;
+}
+.custom-btn-red {
+    background: var(--main-color-2) !important;
+    border: 0.1rem solid var(--third-color-3);
+    color: var(--third-color-3) !important;
+}
+.custom-btn-red:hover {
+    background: var(--third-color-3) !important;
+    color: var(--third-color-1) !important;
+    transition: all 0.2s ease-in-out;
+}
+button.btn#blue{
+    border:1px  solid var(--main-color-2);
+    background: var(--main-color-2);
+    color: var(--main-color-1);
+}
+button.btn#blue:hover{
+    border:1px  solid var(--main-color-1);
+    background: var(--main-color-1);
+    color: var(--main-color-2);
+}
+a.btn#blue{
+    border:1px  solid var(--main-color-2);
+    background: var(--main-color-2);
+    color: var(--main-color-1);
+}
+a.btn#blue:hover{
+    border:1px  solid var(--main-color-1);
+    background: var(--main-color-1);
+    color: var(--main-color-2);
+}
+
 /*logout link*/
 
 .logout_link {
@@ -94,19 +136,31 @@
 
 /*registration form*/
 
-.reg_form_text, .reg_form_fields {
+.reg-form-text, .reg-form-fields {
     display: inline-block;
 }
 
 /*forms input*/
 
+input:focus {
+    outline: none;
+    outline-offset: 0;
+}
 input[type=text] {
+    border: 1px solid rgba(0, 0, 0, 0);
     margin-top: 5px;
     margin-bottom: 2px;
 }
 input[type=password] {
+    border: 2px solid rgba(0, 0, 0, 0);
     margin-top: 2px;
     margin-bottom: 5px;
+}
+input.red-border {
+    border: 2px solid rgb(255, 0, 0);
+}
+input.green-border {
+    border: 2px solid rgb(0, 255, 0);
 }
 input[type=submit] {      
     padding:10px 67px;
@@ -253,16 +307,6 @@ input[type=submit]:hover {
     width: 50%;
     line-height: 1.5;
 }
-.greating button{
-    border:1px  solid var(--main-color-2);
-    background: var(--main-color-2);
-    color: var(--main-color-1);
-}
-.greating button:hover{
-    border:1px  solid var(--main-color-1) !important;
-    background: var(--main-color-1) !important;
-    color: var(--main-color-2) !important;
-}
 .greating a{
     text-decoration: none;
     color: var(--main-color-1);
@@ -291,48 +335,49 @@ input[type=submit]:hover {
     font-size: 16px;
 }
 
-/*bootstrap*/
-
-.custom-btn {
-    background: var(--secondary-color-1) !important;
-    color: var(--secondary-color-3) !important;
-}
-.custom-btn:hover {
-    background: var(--secondary-color-3) !important;
-    color: var(--secondary-color-1) !important;
-    transition: all 0.2s ease-in-out;
-}
-.custom-btn-red {
-    background: var(--main-color-2) !important;
-    border: 0.1rem solid var(--third-color-3);
-    color: var(--third-color-3) !important;
-}
-.custom-btn-red:hover {
-    background: var(--third-color-3) !important;
-    color: var(--third-color-1) !important;
-    transition: all 0.2s ease-in-out;
-}
-
 /*registration success modal*/
 
-.modal-body {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+div.modal-body#modal-body {
     width: 0;
     height: 0;
     z-index: 1000;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    padding: 0 !important;
+    visibility: hidden ;
+    opacity: 0;
 }
-.modal-body.open {
+div.modal-body.open#modal-body {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: auto;
-    height: auto;
-    z-index: 1000;
-    visibility: visible !important;
-    opacity: 1 !important;
+    min-width: 100%;
+    min-height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    visibility: visible;
+    opacity: 1;
+}
+.modal-body_content {
+    border: 3px solid var(--main-color-2);
+    border-radius: 1rem;
+    margin: 5rem 10rem;
+    padding: 2rem;
+}
+h2.fw-bold#text-success {
+    position: relative;
+    left: calc(50% - 10rem);
+    color: var(--secondary-color-2);
+}
+.modal-body a.btn#blue {
+    position: relative;
+    left: calc(50% - 3.1rem);
+    margin-top: 1rem;
+    width: 6rem;
+}
+
+.modal-body_btn_link {
+    text-decoration: none;
+    color: var(--main-color-1);
+}
+.modal-body_btn_link:hover {
+    text-decoration: none;
+    color: var(--main-color-1);
 }

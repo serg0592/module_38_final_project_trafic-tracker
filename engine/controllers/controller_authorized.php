@@ -6,7 +6,7 @@
         }
 
         function action_authorized() {
-            $this->view->generateAuth('authorized_content_view.php', 'template_view.php', 'authorized_user_menu_dropdown_view.php');
+            $this->view->generateAuth('authorizedContent_view.php', 'template_view.php', 'authorizedUserMenuDD_view.php');
         }
     }
 ?>

@@ -10,15 +10,10 @@ class Controller_Registration extends Controller {
     function action_registration() { 
         $this->model->userReg();
     }
-    
-    //метод генерации страницы с формой регистрации
-    function action_open_reg() {
-        $this->view->generate('registration_view.php', 'template_view.php');
-    }
 
     //страница с сообщением об успешной регистрации
-    function action_reg_success() {
-        $this->view->generate('registration_success_view.php', 'template_view.php');
+    function action_regSuccess() {
+        $this->view->generate('regSuccess_view.php', 'template_view.php');
     }
 }
 ?>

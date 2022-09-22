@@ -4,8 +4,8 @@ class Route
 	public static function start()
 	{
 		//действия по умолчанию
-		$controller_name = 'check_user';
-		$action_name = 'check_user';
+		$controller_name = 'checkUser';
+		$action_name = 'checkUser';
 
         //проверка наличия имя контроллера в GET
 		if (isset($_GET['url'])) {
@@ -14,17 +14,13 @@ class Route
 					$controller_name = 'main';
 					$action_name = 'index';
 					break;
-				case 'regPage':
+				case 'regSuccess':
 					$controller_name = 'registration';
-					$action_name = 'open_reg';
+					$action_name = 'regSuccess';
 					break;
-				case 'regSuccessPage':
-					$controller_name = 'registration';
-					$action_name = 'reg_success';
-					break;
-				case 'check_user':
-					$controller_name = 'check_user';
-					$action_name = 'check_user';
+				case 'checkUser':
+					$controller_name = 'checkUser';
+					$action_name = 'checkUser';
 					break;
 				case 'error':
 					$controller_name = 'error';

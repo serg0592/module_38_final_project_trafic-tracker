@@ -35,7 +35,7 @@
                 };
             };
             //переходим на главную страницу
-            header('Location: ?url=check');
+            header('Location: ?url=checkUser');
         }
     }
 ?>

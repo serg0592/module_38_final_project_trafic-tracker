@@ -38,7 +38,7 @@
             };
             
             //Переходим на главную страницу
-            header("Location: ?url=check_user");
+            header("Location: ?url=checkUser");
             exit();
         }
     }

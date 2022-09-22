@@ -1,5 +1,5 @@
 <?php
-    class Model_Check_user extends Model {
+    class Model_CheckUser extends Model {
         // Скрипт проверки 
         function checkUser() {
             include_once '../config/logger.php';

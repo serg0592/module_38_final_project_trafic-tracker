@@ -62,7 +62,7 @@
                     };
 
                     // Переадресовываем браузер на страницу проверки нашего скрипта
-                    header("Location: ?url=check_user");
+                    header("Location: ?url=checkUser");
 
                 } else {
                     $log->error('Неверный пароль');

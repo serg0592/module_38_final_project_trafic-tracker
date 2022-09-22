@@ -33,8 +33,8 @@
                                 if (isset($authUserMenu_view)) {
                                     include $authUserMenu_view;
                                 } else {
-                                    include '../engine/views/authorization_form_dropdown_view.php';
-                                    include '../engine/views/registration_form_dropdown_view.php';
+                                    include '../engine/views/authorizationFormDD_view.php';
+                                    include '../engine/views/registrationFormDD_view.php';
                                 };
                             ?>
                         </ul>
