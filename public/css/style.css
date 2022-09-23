@@ -315,11 +315,11 @@ header.header.webmaster {
 
 /*greating, about*/
 
-.about, .offerMaker{
+.about {
     margin: auto;
     padding: 6em 2em 2em 2em;
 }
-.greating, .auth-wait{
+.greating {
     position: absolute;
     top: 30%;
     margin: auto;
@@ -410,3 +410,14 @@ h2.fw-bold#text-success {
 }
 
 /*admin content*/
+    
+.auth-wait {
+    position: absolute;
+    top: 5%;
+    margin: auto;
+    padding: 2em;
+}
+.offerMaker {
+    margin: auto;
+    padding: 6em 2em 2em 2em;
+}

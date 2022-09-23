@@ -5,11 +5,11 @@ document.querySelector('.header').style.width = `${window.innerWidth}px`;
 document.querySelector('.header').style.height = `${window.innerHeight}px`;
 
 if (document.querySelector('#admin')) {
-    document.querySelector('.header').style.backgroundImage = "URL('../img/adminback.jpg')";
+    document.querySelector('.header').style.backgroundImage = "url('../img/adminback.jpg')";
 } else if (document.querySelector('#offerMaker')) {
-    document.querySelector('.header').setAttribute(`style`, `height: 0px`);
+    document.querySelector('.header').style.backgroundImage = "url('../img/offermakerback.jpg')";
 } else if (document.querySelector('#webMaster')) {
-    document.querySelector('.header').setAttribute(`style`, `height: 0px`);
+    document.querySelector('.header').style.backgroundImage = "url('../img/webmasterback.jpg')";
 };
 
 //сравнение полей с паролем при регистрации
